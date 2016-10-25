@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router'
-import { Container, Header, Image } from 'semantic-ui-react'
+import { Container, Header, Loader } from 'semantic-ui-react'
 
 class Landing extends React.Component {
 
@@ -8,10 +8,10 @@ class Landing extends React.Component {
     return (
       <Container>
         <Header as='h2' textAlign='center'>
-          xyz
-        </Header>
-
-        <h2><Link to='/'>Landing 이동</Link></h2>
+          <br/>
+          xyz loading
+        </Header>    
+        <Loader active inline='centered' />    
         <h2><Link to='/login'>LogIn</Link></h2>
         <h2><Link to='/mydress'>MYDress</Link></h2>
       </Container>
