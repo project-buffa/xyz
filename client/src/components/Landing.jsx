@@ -2,8 +2,6 @@ import React from 'react'
 import { Link } from 'react-router'
 import { Container, Header, Image } from 'semantic-ui-react'
 
-const src = 'upload/white-image.png'
-
 class Landing extends React.Component {
 
   render () {
@@ -12,7 +10,6 @@ class Landing extends React.Component {
         <Header as='h2' textAlign='center'>
           xyz
         </Header>
-        <Image src={src} size='medium' bordered centered/>
 
         <h2><Link to='/'>Landing 이동</Link></h2>
         <h2><Link to='/login'>LogIn</Link></h2>
