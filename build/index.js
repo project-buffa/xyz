@@ -11,7 +11,7 @@ var port = 3030;
 
 app.use('/', _express2.default.static(__dirname + './../client'));
 
-// app.get('/', function(req, res){
+// app.get('/mydress', function(req, res){
 //   res.render('./../client/index.html');
 // });
 

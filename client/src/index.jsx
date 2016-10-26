@@ -1,11 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Router, Route, IndexRoute, hashHistory } from 'react-router'
+import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 import Layout from './components/Layout'
 import Landing from './components/Landing'
 import LogIn from './components/LogIn'
 import MyDress from './components/MyDress'
-
 
 class App extends React.Component {
 
@@ -15,7 +14,7 @@ class App extends React.Component {
 
   render () {
     return (
-      <Router history={hashHistory}>
+      <Router history={browserHistory}>
         <Route path='/' component={Layout}>
           <IndexRoute component={Landing} />
           <Route path='/login' component={LogIn} />
