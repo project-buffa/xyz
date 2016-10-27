@@ -5,37 +5,9 @@ class MyDressList extends React.Component {
   render () {
     return (
       <div className='mydresslist'>
-        <img src={'../../upload/shirt.jpg'} width='200' height='200'/>
-        <img src={'../../upload/shirt.jpg'} width='200' height='200'/>
-        <img src={'../../upload/shirt.jpg'} width='200' height='200'/>
-        <img src={'../../upload/shirt.jpg'} width='200' height='200'/>
-        <img src={'../../upload/shirt.jpg'} width='200' height='200'/>
-        <img src={'../../upload/shirt.jpg'} width='200' height='200'/>
-        <img src={'../../upload/shirt.jpg'} width='200' height='200'/>
-        <img src={'../../upload/shirt.jpg'} width='200' height='200'/>
-        <img src={'../../upload/shirt.jpg'} width='200' height='200'/>
-        <img src={'../../upload/shirt.jpg'} width='200' height='200'/>
-        <img src={'../../upload/shirt.jpg'} width='200' height='200'/>
-        <img src={'../../upload/shirt.jpg'} width='200' height='200'/>
-        <img src={'../../upload/shirt.jpg'} width='200' height='200'/>
-        <img src={'../../upload/shirt.jpg'} width='200' height='200'/>
-        <img src={'../../upload/shirt.jpg'} width='200' height='200'/>
-        <img src={'../../upload/shirt.jpg'} width='200' height='200'/>
-        <img src={'../../upload/shirt.jpg'} width='200' height='200'/>
-        <img src={'../../upload/shirt.jpg'} width='200' height='200'/>
-        <img src={'../../upload/shirt.jpg'} width='200' height='200'/>
-        <img src={'../../upload/shirt.jpg'} width='200' height='200'/>
-        <img src={'../../upload/shirt.jpg'} width='200' height='200'/>
-        <img src={'../../upload/shirt.jpg'} width='200' height='200'/>
-        <img src={'../../upload/shirt.jpg'} width='200' height='200'/>
-        <img src={'../../upload/shirt.jpg'} width='200' height='200'/>
-        <img src={'../../upload/shirt.jpg'} width='200' height='200'/>
-        <img src={'../../upload/shirt.jpg'} width='200' height='200'/>
-        <img src={'../../upload/shirt.jpg'} width='200' height='200'/>
-        <img src={'../../upload/shirt.jpg'} width='200' height='200'/>
-        <img src={'../../upload/shirt.jpg'} width='200' height='200'/>
-        <img src={'../../upload/shirt.jpg'} width='200' height='200'/>
-        <img src={'../../upload/shirt.jpg'} width='200' height='200'/>
+        {this.props.list.map((map,i) => {
+          return <img src={'../../upload/'+map} key={i} width='200' height='200'/>
+        })}
       </div>
     )
   }
