@@ -22,7 +22,10 @@ class Header extends React.Component {
             )
         }else{
             headerBar = (
-                <h2 onClick={this.openNav}>&#9776; {this.props.name}님 안녕하세요! 메뉴바 입니다.</h2>
+                <ul>
+                    <li onClick={this.openNav}><Link>내 옷장 카테고리</Link></li>
+                    <li><Link to=''>코디 추천</Link></li>
+                </ul>
             )
         }
 

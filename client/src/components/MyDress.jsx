@@ -12,7 +12,7 @@ class MyDress extends React.Component {
     super(props)
     this.state = {
       userName:'minho', // 사용자 이름을 get localstorage 로 추출
-      myDressCategory: ['OUTER', 'TOPS', 'BOTTOMS', 'ACCESSORIES'], // 데이터베이스에서 사용자 카테고리 추출
+      myDressCategory: ['외투', '상의', '하의', '악세사리'], // 데이터베이스에서 사용자 카테고리 추출
       myDressList: ['shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg']
     }
     this.closeNav = this.closeNav.bind(this)
@@ -26,15 +26,15 @@ class MyDress extends React.Component {
     return (
       <div className='container'>
         <div id='mySidenav' className='sidenav'> {/* 좌측 메뉴 바 */}
-          <h1 className='closebtn' onClick={this.closeNav}>X</h1>
+          <h1 className='closebtn' onClick={this.closeNav}><Link>X</Link></h1>
           {this.state.myDressCategory.map((map,i) => {
             return (<h1 key={i}>{map}</h1>)
           })}
         </div>
-        <Header name={this.state.userName} /> 
-        <div className='mydresslistblank' />
-        <Link to='/login'><div className='addmydress' /></Link>
-        <MyDressList list={this.state.myDressList}/>
+        <Header name={this.state.userName} /> {/* 상단 메뉴 바 */}
+        <div className='mydresslistblank' /> {/* 메뉴 바 고정을 위해 삽입 */}
+        <Link to=''><div className='addmydress' /></Link> {/* 옷 추가 버튼 */}
+        <MyDressList list={this.state.myDressList}/> {/* 옷 목록 */}
         <Footer />
       </div>
     )
