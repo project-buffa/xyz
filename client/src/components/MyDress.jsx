@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router'
 import Header from './Header'
-import Footer from './Footer'
 import MyDressList from './MyDressList'
 // import { createStore } from 'redux';
 // import { Provider } from 'react-redux';
@@ -35,7 +34,6 @@ class MyDress extends React.Component {
         <div className='mydresslistblank' /> {/* 메뉴 바 고정을 위해 삽입 */}
         <Link to=''><div className='addmydress' /></Link> {/* 옷 추가 버튼 */}
         <MyDressList list={this.state.myDressList}/> {/* 옷 목록 */}
-        <Footer />
       </div>
     )
   }
