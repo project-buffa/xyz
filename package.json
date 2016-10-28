@@ -18,14 +18,13 @@
   },
   "homepage": "https://github.com/project-buffa/xyz#readme",
   "dependencies": {
-    "axios": "^0.15.2",
     "express": "^4.14.0",
+    "multer": "^1.2.0",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "react-redux": "^4.4.5",
     "react-router": "^2.8.1",
-    "redux": "^3.6.0",
-    "semantic-ui-react": "^0.56.10"
+    "redux": "^3.6.0"
   },
   "devDependencies": {
     "babel-core": "^6.17.0",

@@ -9,7 +9,7 @@ class Header extends React.Component {
     }
 
     openNav() { // 좌측 메뉴바를 여는 함수
-        document.getElementById('mySidenav').style.width = '150px';
+        document.getElementById('mySidenav').style.width = '150px'
     }
 
     render(){

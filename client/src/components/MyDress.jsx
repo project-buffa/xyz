@@ -32,7 +32,7 @@ class MyDress extends React.Component {
         </div>
         <Header name={this.state.userName} /> {/* 상단 메뉴 바 */}
         <div className='mydresslistblank' /> {/* 메뉴 바 고정을 위해 삽입 */}
-        <Link to=''><div className='addmydress' /></Link> {/* 옷 추가 버튼 */}
+        <Link to=''><div className='addmydress'></div></Link> {/* 옷 추가 버튼 */}
         <MyDressList list={this.state.myDressList}/> {/* 옷 목록 */}
       </div>
     )
