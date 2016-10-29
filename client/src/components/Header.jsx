@@ -18,13 +18,14 @@ class Header extends React.Component {
         
         if(this.props.userInfo){
             headerBar = (
-                <h1>메뉴 바 입니다.</h1>
+                <h1>메뉴 바 입니다. {this.props.name} </h1>
             )
         }else{
             headerBar = (
                 <ul>
                     <li onClick={this.openNav}><Link>내 옷장 카테고리</Link></li>
                     <li><Link to=''>코디 추천</Link></li>
+                    <li><Link to=''>{this.props.name}</Link></li>
                 </ul>
             )
         }

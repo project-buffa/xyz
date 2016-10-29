@@ -27336,9 +27336,13 @@
 	    var _this = _possibleConstructorReturn(this, (MyDress.__proto__ || Object.getPrototypeOf(MyDress)).call(this, props));
 
 	    _this.state = {
-	      userName: 'minho', // 사용자 이름을 get localstorage 로 추출
-	      myDressCategory: ['외투', '상의', '하의', '악세사리'], // 데이터베이스에서 사용자 카테고리 추출
-	      myDressList: ['shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg']
+	      userName: '민호', // 사용자 이름을 get localstorage 로 추출
+
+	      myDressCategory: ['외투', '상의', '하의', '악세사리'], // 데이터베이스에서 사용자 카테고리 추출,
+
+	      myDressList: ['shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg'],
+
+	      DressList: [{ '외투': ['outer.jpg', 'outer.jpg', 'outer.jpg', 'outer.jpg', 'outer.jpg', 'outer.jpg', 'outer.jpg'] }, { '상의': ['shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg', 'shirt.jpg'] }, { '하의': ['pants.jpg', 'pants.jpg', 'pants.jpg', 'pants.jpg', 'pants.jpg', 'pants.jpg', 'pants.jpg'] }, { '악세사리': ['accessories.jpg', 'accessories.jpg', 'accessories.jpg', 'accessories.jpg', 'accessories.jpg', 'accessories.jpg', 'accessories.jpg'] }]
 	    };
 	    _this.closeNav = _this.closeNav.bind(_this);
 	    return _this;
@@ -27387,7 +27391,7 @@
 	          _react2.default.createElement('div', { className: 'addmydress' })
 	        ),
 	        ' ',
-	        _react2.default.createElement(_MyDressList2.default, { list: this.state.myDressList }),
+	        _react2.default.createElement(_MyDressList2.default, { list: this.state.DressList[1]['상의'] }),
 	        ' '
 	      );
 	    }
@@ -27448,7 +27452,9 @@
 	                headerBar = _react2.default.createElement(
 	                    'h1',
 	                    null,
-	                    '\uBA54\uB274 \uBC14 \uC785\uB2C8\uB2E4.'
+	                    '\uBA54\uB274 \uBC14 \uC785\uB2C8\uB2E4. ',
+	                    this.props.name,
+	                    ' '
 	                );
 	            } else {
 	                headerBar = _react2.default.createElement(
@@ -27470,6 +27476,15 @@
 	                            _reactRouter.Link,
 	                            { to: '' },
 	                            '\uCF54\uB514 \uCD94\uCC9C'
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        'li',
+	                        null,
+	                        _react2.default.createElement(
+	                            _reactRouter.Link,
+	                            { to: '' },
+	                            this.props.name
 	                        )
 	                    )
 	                );

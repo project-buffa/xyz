@@ -2,8 +2,6 @@ import express from 'express';
 const app = express();
 import path from 'path';
 import multer from 'multer'; // 파일 업로드 기능을 위한 미들 웨어
-import gm from 'gm'; // 이미지 컨트롤 미들 웨어
-
 
 app.use('/', express.static(__dirname + './../client'));
 
@@ -42,7 +40,6 @@ app.post('/upload', function(request, response) { // 파일 업로드 기능 구
     }
     // response.end('Your File Uploaded');
     // console.log('Photo Uploaded');
-    // gm('/upload/');
     return response.redirect('/'); // 업로드 후 리다이렉트 설정
   })
 });
