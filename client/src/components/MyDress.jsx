@@ -18,7 +18,8 @@ class MyDress extends React.Component {
   }
 
   closeNav() { // 좌측 메뉴바를 닫는 함수
-    document.getElementById('mySidenav').style.width = '0';
+    // document.getElementById('mySidenav').style.width = '0';
+    document.getElementById('mySidenav').style.margin-left = '0px';
   }
 
   render () {

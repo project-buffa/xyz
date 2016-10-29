@@ -1,16 +1,16 @@
 import React from 'react'
 import { Link } from 'react-router'
 
-class LogIn extends React.Component {
+class Error extends React.Component {
   
   render () {
     return (
       <div className='container'>
-        <h1>페이스북, 구글 로그인</h1>
+        <h1>잘못된 파일을 올리셨습니다.</h1>
       </div>
     )
   }
   
 }
 
-module.exports = LogIn
+module.exports = Error

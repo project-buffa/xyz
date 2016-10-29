@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --hot --host 0.0.0.0",
-    "node": "babel server --out-dir build && webpack && nodemon build/index.js"
+    "clean": "rm -rf build client/bundle.js",
+    "build": "babel server --out-dir build",
+    "xyz":  "babel server --out-dir build && webpack && nodemon build/index.js"
   },
   "repository": {
     "type": "git",
@@ -19,6 +21,7 @@
   "homepage": "https://github.com/project-buffa/xyz#readme",
   "dependencies": {
     "express": "^4.14.0",
+    "gm": "^1.23.0",
     "multer": "^1.2.0",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
