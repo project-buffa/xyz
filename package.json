@@ -7,7 +7,7 @@
     "start": "webpack-dev-server --hot --host 0.0.0.0",
     "clean": "rm -rf build client/bundle.js",
     "build": "babel server --out-dir build",
-    "xyz":  "babel server --out-dir build && webpack && nodemon build/index.js"
+    "xyz": "babel server --out-dir build && webpack && nodemon build/index.js"
   },
   "repository": {
     "type": "git",
@@ -27,7 +27,8 @@
     "react-dom": "^15.3.2",
     "react-redux": "^4.4.5",
     "react-router": "^2.8.1",
-    "redux": "^3.6.0"
+    "redux": "^3.6.0",
+    "sharp": "^0.16.2"
   },
   "devDependencies": {
     "babel-core": "^6.17.0",
