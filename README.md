@@ -3,6 +3,6 @@ xyz
 
 npm install
 
-npm run node
+first iterm : webpack --watch
 
-localhost:3030
+second iterm : nodemon

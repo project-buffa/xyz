@@ -74,9 +74,13 @@
 
 	var _MyDress2 = _interopRequireDefault(_MyDress);
 
-	var _Error = __webpack_require__(241);
+	var _UploadError = __webpack_require__(241);
 
-	var _Error2 = _interopRequireDefault(_Error);
+	var _UploadError2 = _interopRequireDefault(_UploadError);
+
+	var _PageError = __webpack_require__(242);
+
+	var _PageError2 = _interopRequireDefault(_PageError);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -107,7 +111,8 @@
 	          _react2.default.createElement(_reactRouter.IndexRoute, { component: _Landing2.default }),
 	          _react2.default.createElement(_reactRouter.Route, { path: '/login', component: _LogIn2.default }),
 	          _react2.default.createElement(_reactRouter.Route, { path: '/mydress', component: _MyDress2.default }),
-	          _react2.default.createElement(_reactRouter.Route, { path: '/error', component: _Error2.default })
+	          _react2.default.createElement(_reactRouter.Route, { path: '/uploaderror', component: _UploadError2.default }),
+	          _react2.default.createElement(_reactRouter.Route, { path: '*', component: _PageError2.default })
 	        )
 	      );
 	    }
@@ -27572,16 +27577,16 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var Error = function (_React$Component) {
-	  _inherits(Error, _React$Component);
+	var UploadError = function (_React$Component) {
+	  _inherits(UploadError, _React$Component);
 
-	  function Error() {
-	    _classCallCheck(this, Error);
+	  function UploadError() {
+	    _classCallCheck(this, UploadError);
 
-	    return _possibleConstructorReturn(this, (Error.__proto__ || Object.getPrototypeOf(Error)).apply(this, arguments));
+	    return _possibleConstructorReturn(this, (UploadError.__proto__ || Object.getPrototypeOf(UploadError)).apply(this, arguments));
 	  }
 
-	  _createClass(Error, [{
+	  _createClass(UploadError, [{
 	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(
@@ -27596,10 +27601,61 @@
 	    }
 	  }]);
 
-	  return Error;
+	  return UploadError;
 	}(_react2.default.Component);
 
-	module.exports = Error;
+	module.exports = UploadError;
+
+/***/ },
+/* 242 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRouter = __webpack_require__(172);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var PageError = function (_React$Component) {
+	  _inherits(PageError, _React$Component);
+
+	  function PageError() {
+	    _classCallCheck(this, PageError);
+
+	    return _possibleConstructorReturn(this, (PageError.__proto__ || Object.getPrototypeOf(PageError)).apply(this, arguments));
+	  }
+
+	  _createClass(PageError, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'container' },
+	        _react2.default.createElement(
+	          'h1',
+	          null,
+	          '\uC798\uBABB\uB41C \uC811\uADFC\uC744 \uD558\uC168\uC2B5\uB2C8\uB2E4.'
+	        )
+	      );
+	    }
+	  }]);
+
+	  return PageError;
+	}(_react2.default.Component);
+
+	module.exports = PageError;
 
 /***/ }
 /******/ ]);

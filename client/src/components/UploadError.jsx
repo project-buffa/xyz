@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router'
 
-class Error extends React.Component {
+class UploadError extends React.Component {
   
   render () {
     return (
@@ -13,4 +13,4 @@ class Error extends React.Component {
   
 }
 
-module.exports = Error
+module.exports = UploadError

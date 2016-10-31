@@ -5,7 +5,8 @@ import Layout from './components/Layout'
 import Landing from './components/Landing'
 import LogIn from './components/LogIn'
 import MyDress from './components/MyDress'
-import Error from './components/Error'
+import UploadError from './components/UploadError'
+import PageError from './components/PageError'
 
 class App extends React.Component {
 
@@ -20,7 +21,8 @@ class App extends React.Component {
           <IndexRoute component={Landing} />
           <Route path='/login' component={LogIn} />
           <Route path='/mydress' component={MyDress} />
-          <Route path='/error' component={Error} />
+          <Route path='/uploaderror' component={UploadError} />
+          <Route path='*' component={PageError} />
         </Route>
       </Router>
     )
