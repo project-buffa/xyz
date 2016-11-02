@@ -6,7 +6,7 @@ import Layout from './components/Layout'
 import Landing from './components/Landing'
 import MemberIn from './components/MemberIn'
 import LogIn from './components/LogIn'
-import MyDress from './components/MyDress'
+import MyDress from './containers/MyDress'
 import UploadError from './components/UploadError'
 import PageError from './components/PageError'
 
@@ -16,10 +16,6 @@ import reducers from './reducers'
 const store = createStore(reducers)
 
 class App extends React.Component {
-
-  constructor (props) {
-    super(props)
-  }
 
   render () {
     return (

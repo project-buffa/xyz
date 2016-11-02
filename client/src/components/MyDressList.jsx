@@ -1,11 +1,12 @@
 import React from 'react'
+import { SEARCH_DRESS } from '../constants/ActionTypes'
 
 class MyDressList extends React.Component {
 
   render () {
     return (
       <div className='mydresslist'>
-        <h2>mydresslist</h2>
+        <h2>{this.props.dress}</h2>
       </div>
     )
   }

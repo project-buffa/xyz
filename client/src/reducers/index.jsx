@@ -1,9 +1,9 @@
-import { combineReducers } from 'redux';
-import category from './category';
+import { combineReducers } from 'redux'
+import dress from './dress'
 
 
 const reducers = combineReducers({
-    category
-});
+    dress
+})
 
-export default reducers;
+export default reducers

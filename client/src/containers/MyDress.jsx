@@ -1,25 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router'
-import Top from '../containers/Top'
-import TopMenu from '../containers/TopMenu'
-import MyDressList from '../containers/MyDressList'
-import BottomMenu from '../containers/BottomMenu'
+import Top from '../components/Top'
+import TopMenu from '../components/TopMenu'
+import MyDressList from '../components/MyDressList'
+import BottomMenu from '../components/BottomMenu'
 
-import { connect } from 'react-redux';
-import * as actions from '../actions';
-
-const mapStateToProps = (state) => {
-    return {
-        categoryname: state.category.categoryname
-    };
-};
-
-const mapDispatchToProps = (dispatch) => {
-    //return bindActionCreators(actions, dispatch);
-    return {
-        handleCategory: () => { dispatch(actions.category())}
-    };
-};
+import { connect } from 'react-redux'
+import * as DressActions from '../actions'
 
 class MyDress extends React.Component {
   
@@ -27,18 +14,33 @@ class MyDress extends React.Component {
     return (
       <div className='container'>
         <Top />
-        <TopMenu categoryname={this.props.categoryname} />
-        <BottomMenu onCategory={this.props.handleCategory} />
+        <TopMenu dress={this.props.dress} handleSearchDress={this.props.handleSearchDress} />
+        <BottomMenu />
         <div className='mydress'>
-          <MyDressList />
+          <MyDressList dress={this.props.dress}/>
         </div>
       </div>
     )
   }
-  
+
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(MyDress)
+const mapStateToProps = (state) => {
+  return {
+    dress: state.dress.text
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        handleSearchDress: (value) => { dispatch(DressActions.searchDress(value)) }
+    };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(MyDress)
 
 // class MyDress extends React.Component {
 

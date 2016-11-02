@@ -1,7 +1,3 @@
-import * as types from './ActionTypes'
+import * as types from '../constants/ActionTypes'
 
-export function category() {
-    return {
-        type: types.CATEGORY
-    }
-}
+export const searchDress = text => ({ type: types.SEARCH_DRESS, text })
