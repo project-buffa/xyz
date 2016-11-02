@@ -6,11 +6,13 @@ class PageError extends React.Component {
   render () {
     return (
       <div className='container'>
-        <h1>잘못된 접근을 하셨습니다.</h1>
+        <div className='pageerror'>
+          <h1>잘못된 접근 안내 페이지</h1>
+        </div>
       </div>
     )
   }
   
 }
 
-module.exports = PageError
+export default PageError

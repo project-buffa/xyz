@@ -6,4 +6,4 @@ const Layout = (props) => (
   </div>
 )
 
-module.exports = Layout
+export default Layout

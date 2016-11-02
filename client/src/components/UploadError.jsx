@@ -6,11 +6,13 @@ class UploadError extends React.Component {
   render () {
     return (
       <div className='container'>
-        <h1>잘못된 파일을 올리셨습니다.</h1>
+        <div className='uploaderror'>
+          <h1>업로드 에러 안내 페이지</h1>
+        </div>
       </div>
     )
   }
   
 }
 
-module.exports = UploadError
+export default UploadError
