@@ -5,42 +5,61 @@ import TopMenu from '../components/TopMenu'
 import MyDressList from '../components/MyDressList'
 import BottomMenu from '../components/BottomMenu'
 
-import { connect } from 'react-redux'
-import * as DressActions from '../actions'
-
 class MyDress extends React.Component {
   
   render () {
     return (
-      <div className='container'>
+      <div className='mydress'>
         <Top />
-        <TopMenu dress={this.props.dress} handleSearchDress={this.props.handleSearchDress} />
+        <TopMenu />
+        <MyDressList />
         <BottomMenu />
-        <div className='mydress'>
-          <MyDressList dress={this.props.dress}/>
-        </div>
       </div>
     )
   }
 
 }
 
-const mapStateToProps = (state) => {
-  return {
-    dress: state.dress.text
-  }
-}
+export default MyDress
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        handleSearchDress: (value) => { dispatch(DressActions.searchDress(value)) }
-    };
-};
+// ----------------------------------------------------------------------------------------------------------------------------
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(MyDress)
+// import { connect } from 'react-redux'
+// import * as DressActions from '../actions'
+
+// class MyDress extends React.Component {
+  
+//   render () {
+//     return (
+//       <div className='mydress'>
+//         <Top />
+//         <TopMenu dress={this.props.dress} handleSearchDress={this.props.handleSearchDress} />
+//         <MyDressList dress={this.props.dress}/>
+//         <BottomMenu />
+//       </div>
+//     )
+//   }
+
+// }
+
+// const mapStateToProps = (state) => {
+//   return {
+//     dress: state.dress.text
+//   }
+// }
+
+// const mapDispatchToProps = (dispatch) => {
+//     return {
+//         handleSearchDress: (value) => { dispatch(DressActions.searchDress(value)) }
+//     };
+// };
+
+// export default connect(
+//   mapStateToProps,
+//   mapDispatchToProps
+// )(MyDress)
+
+// ----------------------------------------------------------------------------------------------------------------------------
 
 // class MyDress extends React.Component {
 

@@ -1,42 +1,55 @@
 html,body {
-    margin:0;
     /*margin-left: 0px;
     margin-top: 0px;
     margin-right: 0px;
-    margin-bottom: 0px;
+    margin-bottom: 0px;*/
     width: 100%;
-    height: 100%;*/
-}
-
-.outer {
-  display: table;
-  width: 100%;
-  height: 100%;
-}
-
-.inner {
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
-  color:#ffffff;
+    height: 100%;
 }
 
 #app {
-    width: 100%;
+    /*width: 100%;
     height: 100%;
-    margin: auto;
+    margin: auto;*/
 }
 
 .container {
+    width: 100%;
+    height:100vh;
+    /*margin: auto;*/
+}
+
+.outer {
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+.inner {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
 }
 
 .landing {
+    width: 100%;
+    height: 100%;
+    color: #A0A0A0;
+    background-color: #1A1A1A;
 }
 
 .memberin {
+    width: 100%;
+    height: 100%;
+    color: #A0A0A0;
+    background-color: #1A1A1A;
 }
 
 .login {
+    width: 100%;
+    height: 100%;
+    color: #A0A0A0;
+    background-color: #1A1A1A;
 }
 
 .top {
@@ -51,8 +64,8 @@ html,body {
     list-style-type: none;
     margin: 0px;
     padding: 0px;
-    overflow: hidden;
-    background-color: #002F2F;
+    /*overflow: hidden;*/
+    background-color: #1A1A1A;
     position: fixed;
     top: 0px;
     width: 100%;
@@ -64,8 +77,8 @@ html,body {
 
 .top li a {
     display: block;
-    color: white;
-    padding: 16px;
+    color: #A0A0A0;
+    padding: 14px;
     text-decoration: none;
     /*display: block;
     color: white;
@@ -86,10 +99,9 @@ html,body {
     list-style-type: none;
     margin: 0px;
     padding: 0px;
-    overflow: hidden;
-    background-color: #EFECCA;
+    /*overflow: hidden;*/
     position: fixed;
-    top: 51px;
+    top: 47px;
     width: 100%;
 }
 
@@ -99,8 +111,8 @@ html,body {
 
 .topmenu li a {
     display: block;
-    color: #002F2F;
-    padding: 16px;
+    color: #1A1A1A;
+    padding: 10px;
     text-decoration: none;
     /*display: block;
     color: white;
@@ -110,10 +122,17 @@ html,body {
 }
 
 .mydress {
-    margin-top: 120px;
+    /*width: 100%;*/
+    /*background-color: red;*/
 }
 
 .mydresslist {
+    margin-top: 85px;
+    /*width: 100%;*/
+    /*display: block;*/
+    /*height: 100%;*/
+    /*color: yellow;*/
+    /*background-color: #ffffff;*/
 }
 
 .bottommenu {
@@ -129,7 +148,7 @@ html,body {
     margin: 0px;
     padding: 0px;
     overflow: hidden;
-    background-color: #A7A37E;
+    background-color: #1A1A1A;
     position: fixed;
     bottom: 0px;
     width: 100%;
@@ -142,7 +161,7 @@ html,body {
 .bottommenu li a {
     display: block;
     color: white;
-    padding: 16px;
+    padding: 12px;
     text-decoration: none;
 }
 
