@@ -10,10 +10,13 @@ import MyDress from './containers/MyDress'
 import UploadError from './components/UploadError'
 import PageError from './components/PageError'
 
-import { createStore } from 'redux'
 import { Provider } from 'react-redux'
+
+import { createStore } from 'redux'
 import reducers from './reducers'
 const store = createStore(reducers)
+
+console.log(store.getState())
 
 class App extends React.Component {
 

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router'
+import { Icon } from 'semantic-ui-react'
 
 class BottomMenu extends React.Component {
 
@@ -15,15 +16,17 @@ class BottomMenu extends React.Component {
 
     const activeBottomMenuStyle = {
       float: 'right',
-      backgroundColor: '#E6E2AF'
+      backgroundColor: '#1C704C'
     }
     
     return (
-      <div className='container'>
+      <div>
+
         <div className='bottommenu'>
           <ul>
             <li onClick={this.openNav}><Link to='/mydress'>category open</Link></li>
-            <li style={activeBottomMenuStyle}><Link to='/'>Camera</Link></li>
+            <li style={activeBottomMenuStyle}><Link to='/'><Icon name='photo' /></Link></li>
+            <li style={activeBottomMenuStyle}><Link to='/'><Icon name='image' /></Link></li>
           </ul>
         </div>
 
@@ -36,6 +39,7 @@ class BottomMenu extends React.Component {
             </div>
           </div>
         </div>
+        
       </div>
     )
   }
