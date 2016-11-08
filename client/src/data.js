@@ -44,6 +44,11 @@ window.xyzDressCoordi = [
         dc_id: '', // 자동 생성 고유 값
         setname: '', // 세트 이름
         dressset: [ 'd_id', 'd_id', 'd_id' ], // 구성 드레스 갯수에 따라 배열로 저장
+        dressset_d_id_1: ''
+        dressset_d_id_2: ''
+        dressset_d_id_3: ''
+        dressset_d_id_4: ''
+        dressset_d_id_5: ''
         date: '' // 등록일
     }
 ];

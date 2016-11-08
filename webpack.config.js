@@ -10,6 +10,8 @@ module.exports = {
         extensions: ['', '.js', '.jsx', '.json']
     },
     
+    devtool: '#inline-source-map',
+
     devServer: {
         inline: true,
         port: 3000,

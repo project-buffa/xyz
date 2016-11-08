@@ -1,13 +1,39 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { Input } from 'semantic-ui-react'
 
 class MyDressList extends React.Component {
 
+  // constructor(props){
+  //   super(props)
+
+  //   this.state = {
+  //   }
+  // }
+
+  // fileUpload(){
+  //   document.getElementById('uploadfile').click()
+  // }
+
   render () {
+
+    const uploadFileHidden = {
+      // display: 'none'
+    }
+    
     return (
       <div className='mydresslist'>
-        <h2>{this.props.dress}</h2>
-      </div>
+        {this.props.dress}
+        <form action='/upload' method='post' encType='multipart/form-data'>
+          <Input transparent type='file' name='uploadDress' accept='image/*' capture='camera' placeholder='' />
+          <Input transparent type='submit' />
+        </form>
+
+        {/*<div className="wrapper" style={uploadFileHidden}>
+            <Input type="file" id="uploadfile" accept='image/*' capture='camera' /> 
+        </div>
+        <div onClick={this.fileUpload}>click</div>*/}
+      </div> 
     )
   }
   

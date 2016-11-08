@@ -7,15 +7,14 @@ class Top extends React.Component {
   render () {
 
     const activeTopStyle = {
-      float: 'right',
-      backgroundColor: '#1A1A1A'
+      float: 'right'
     }
 
     return (
       <div className='top'>
           <ul>
               <li><Link to='/mydress'>xyz</Link></li>
-              <li style={activeTopStyle}><Link to='/'><Icon name='settings' /></Link></li>
+              <li style={activeTopStyle}><Link to='/setting'><Icon name='settings' /></Link></li>
           </ul>
       </div>
     )

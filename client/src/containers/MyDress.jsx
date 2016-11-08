@@ -6,13 +6,22 @@ import MyDressList from '../components/MyDressList'
 import BottomMenu from '../components/BottomMenu'
 
 class MyDress extends React.Component {
+
+  // constructor(props){
+  //   super(props)
+
+  //   this.state = {
+  //     wow:'wow'
+  //   }
+  // }
   
   render () {
+
     return (
       <div className='mydress'>
+        <MyDressList />
         <Top />
         <TopMenu />
-        <MyDressList />
         <BottomMenu />
       </div>
     )

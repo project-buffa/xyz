@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router'
+import { connect } from 'react-redux'
 import { Icon } from 'semantic-ui-react'
 
 class BottomMenu extends React.Component {
@@ -16,7 +17,7 @@ class BottomMenu extends React.Component {
 
     const activeBottomMenuStyle = {
       float: 'right',
-      backgroundColor: '#1C704C'
+      backgroundColor: '#4EC8AF'
     }
     
     return (
@@ -25,17 +26,25 @@ class BottomMenu extends React.Component {
         <div className='bottommenu'>
           <ul>
             <li onClick={this.openNav}><Link to='/mydress'>category open</Link></li>
-            <li style={activeBottomMenuStyle}><Link to='/'><Icon name='photo' /></Link></li>
-            <li style={activeBottomMenuStyle}><Link to='/'><Icon name='image' /></Link></li>
+            <li style={activeBottomMenuStyle}><Link to='/mydress'><Icon name='photo' /></Link></li>
+            <li style={activeBottomMenuStyle}><Link to='/mydress'><Icon name='image' /></Link></li>
           </ul>
         </div>
 
         <div id="myNav" className="overlay">
           <div className="outer">
             <div className="inner">
-              <h2 onClick={this.props.onCategory}>shirt</h2> <br />
-              pants <br /><br />
-              <h3 onClick={this.closeNav}>close</h3>
+              <ul>
+                <li onClick={this.closeNav}>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  X
+                </li>
+                {this.props.dresscategory.map((category, i) => {
+                  return (
+                    <li key={i}>{category.name}</li>
+                  )
+                })}
+              </ul>
             </div>
           </div>
         </div>
@@ -46,4 +55,12 @@ class BottomMenu extends React.Component {
   
 }
 
-export default BottomMenu
+const mapStateToProps = (state) => {
+  return {
+    dresscategory: state.dress.dresscategory
+  }
+}
+
+export default connect(
+  mapStateToProps
+)(BottomMenu)

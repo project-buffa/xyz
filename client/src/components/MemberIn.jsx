@@ -7,7 +7,11 @@ class MemberIn extends React.Component {
   render () {
 
     const activeMemberInStyle = {
-      color: '#A0A0A0'
+      color : '#ffffff'
+    }
+
+    const memberInStyle = {
+      fontSize : '20px'
     }
 
     const src = 'http://semantic-ui.com/images/wireframe/white-image.png'
@@ -16,12 +20,12 @@ class MemberIn extends React.Component {
       <div className='container'>
         <div className='memberin'>
           <div className='outer'>
-              <div className='inner'>
-                <h1>SIGN UP</h1>
-                <Image src={src} size='small'  centered disabled /><br />
+              <div className='inner' style={memberInStyle}>
+                xyz 2016 SIGN UP<br /><br />
+                <Image src={src} size='small' centered bordered /><br />
                 <Button circular color='facebook' icon='facebook' />
                 <Button circular color='google plus' icon='google plus' /><br /><br />
-                <Link to='/login' style={activeMemberInStyle}>이미 회원이세요? SIGN IN</Link>
+                <Link to='/login' style={activeMemberInStyle}>Have a xyz.com account?</Link>
               </div>
             </div>
           </div>

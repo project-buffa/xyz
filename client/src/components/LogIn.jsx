@@ -6,12 +6,12 @@ class LogIn extends React.Component {
 
   render () {
 
-    const activeLogInStyle = {
-      color: '#A0A0A0'
+    const activeMemberInStyle = {
+      color : '#ffffff'
     }
 
-    const activeLogInTempStyle = {
-      color: '#ffffff'
+    const memberInStyle = {
+      fontSize : '20px'
     }
 
     const src = 'http://semantic-ui.com/images/wireframe/white-image.png'
@@ -20,13 +20,12 @@ class LogIn extends React.Component {
       <div className='container'>
         <div className='login'>
           <div className='outer'>
-              <div className='inner'>
-                <h1>SIGN IN</h1>
-                <Image src={src} size='small'  centered disabled /><br />
+              <div className='inner' style={memberInStyle}>
+                xyz 2016 SIGN IN<br /><br />
+                <Link to='/mydress'><Image src={src} size='small' centered bordered /></Link><br />
                 <Button circular color='facebook' icon='facebook' />
                 <Button circular color='google plus' icon='google plus' /><br /><br />
-                <Link to='/memberin' style={activeLogInStyle}>아직 회원이 아니세요? SIGN UP</Link><br /><br />
-                <Link to='/mydress' style={activeLogInTempStyle}>마이 드레스 페이지 홈으로 이동(임시)</Link>
+                <Link to='/forgot' style={activeMemberInStyle}>Forgot your password?</Link>
               </div>
             </div>
           </div>
