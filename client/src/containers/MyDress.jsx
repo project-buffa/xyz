@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router'
 import Top from '../components/Top'
 import TopMenu from '../components/TopMenu'
+import TopSearch from '../components/TopSearch'
 import MyDressList from '../components/MyDressList'
 import BottomMenu from '../components/BottomMenu'
 
@@ -22,6 +23,7 @@ class MyDress extends React.Component {
         <MyDressList />
         <Top />
         <TopMenu />
+        <TopSearch />
         <BottomMenu />
       </div>
     )

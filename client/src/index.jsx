@@ -6,6 +6,8 @@ import Layout from './components/Layout'
 import Landing from './components/Landing'
 import MemberIn from './components/MemberIn'
 import LogIn from './components/LogIn'
+import ForgotPassword from './components/ForgotPassword'
+import Setting from './components/Setting'
 import MyDress from './containers/MyDress'
 import UploadError from './components/UploadError'
 import PageError from './components/PageError'
@@ -27,6 +29,8 @@ class App extends React.Component {
           <IndexRoute component={Landing} />
           <Route path='/memberin' component={MemberIn} />
           <Route path='/login' component={LogIn} />
+          <Route path='/forgotpassword' component={ForgotPassword} />
+          <Route path='/setting' component={Setting} />
           <Route path='/mydress' component={MyDress} />
           <Route path='/uploaderror' component={UploadError} />
           <Route path='*' component={PageError} />

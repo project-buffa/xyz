@@ -9,7 +9,7 @@ export function search(request, response){
 // 의류 촬영 업로드
 var storage = multer.diskStorage({ // 저장소 설정
   destination: function (request, file, callback) {
-    callback(null, './client/upload'); // 저장 폴더 설정
+    callback(null, './server/upload'); // 저장 폴더 설정
   },
   filename: function (request, file, callback) {
   // console.log(file);

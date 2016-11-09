@@ -51,6 +51,18 @@ html,body {
     background-color: #4584D1;
 }
 
+.forgotpassword {
+    width: 100%;
+    height: 100%;
+    background-color: #4584D1;
+}
+
+.setting {
+    width: 100%;
+    height: 100%;
+    background-color: #4584D1;
+}
+
 .top {
     /*position: fixed;
     top: 0px;
@@ -93,23 +105,63 @@ html,body {
     left: 0px;
     width: 100%;
     height: 60px;*/
+    float: left;
+    text-align: center;
 }
 
 .topmenu ul{
+    background-color: #4FBFED;
     list-style-type: none;
     margin: 0px;
     padding: 0px;
     /*overflow: hidden;*/
     position: fixed;
-    top: 47px;
+    top: 48px;
     width: 100%;
 }
 
 .topmenu li {
+    display:inline-block;
     float: left;
+    /*color:#ffffff;*/
 }
 
 .topmenu li a {
+    display: block;
+    color: #ffffff;
+    padding: 10px;
+    text-decoration: none;
+    /*display: block;*/
+    /*color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;*/
+}
+
+.topsearch {
+    /*position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 60px;*/
+}
+
+.topsearch ul{
+    background-color: #ffffff;
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    /*overflow: hidden;*/
+    position: fixed;
+    top: 87px;
+    width: 100%;
+}
+
+.topsearch li {
+    float: left;
+}
+
+.topsearch li a {
     display: block;
     color: #1A1A1A;
     padding: 10px;
@@ -127,13 +179,23 @@ html,body {
 }
 
 .mydresslist {
-    margin-top: 85px;
+    margin-top: 125px;
     font-family: 'Gloria Hallelujah', cursive;
-    /*width: 100%;*/
-    /*display: block;*/
-    /*height: 100%;*/
-    /*color: yellow;*/
-    /*background-color: #ffffff;*/
+}
+
+.mydresslistentry {
+    margin-top: 125px;
+    font-family: 'Gloria Hallelujah', cursive;
+}
+
+.mycoordiset {
+    margin-top: 125px;
+    font-family: 'Gloria Hallelujah', cursive;
+}
+
+.recommendcoordi {
+    margin-top: 125px;
+    font-family: 'Gloria Hallelujah', cursive;
 }
 
 .bottommenu {

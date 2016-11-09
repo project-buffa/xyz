@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Input } from 'semantic-ui-react'
+import { Input, Image } from 'semantic-ui-react'
 
 class MyDressList extends React.Component {
 
@@ -20,19 +20,41 @@ class MyDressList extends React.Component {
     const uploadFileHidden = {
       // display: 'none'
     }
-    
+
+    // const src = '../../../upload/sampledress.jpg'
+
+    const src ='./upload/sampledress.jpg'
+
+    const imgStyle = {
+      width: '120px',
+      height: 'auto',
+      margin: '5px'
+    }
+
     return (
       <div className='mydresslist'>
-        {this.props.dress}
-        <form action='/upload' method='post' encType='multipart/form-data'>
+        {/*{this.props.dress}*/}
+        {/*<form action='/upload' method='post' encType='multipart/form-data'>
           <Input transparent type='file' name='uploadDress' accept='image/*' capture='camera' placeholder='' />
           <Input transparent type='submit' />
-        </form>
-
+        </form>*/}
         {/*<div className="wrapper" style={uploadFileHidden}>
             <Input type="file" id="uploadfile" accept='image/*' capture='camera' /> 
         </div>
         <div onClick={this.fileUpload}>click</div>*/}
+        <img src={src} style={imgStyle}/>
+        <img src={src} style={imgStyle}/>
+        <img src={src} style={imgStyle}/>
+        <img src={src} style={imgStyle}/>
+        <img src={src} style={imgStyle}/>
+        <img src={src} style={imgStyle}/>
+        <img src={src} style={imgStyle}/>
+        <img src={src} style={imgStyle}/>
+        <img src={src} style={imgStyle}/>
+        <img src={src} style={imgStyle}/>
+        <img src={src} style={imgStyle}/>
+        <img src={src} style={imgStyle}/>
+        <br /><br /><br /><br />
       </div> 
     )
   }

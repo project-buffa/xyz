@@ -25,7 +25,7 @@ class BottomMenu extends React.Component {
 
         <div className='bottommenu'>
           <ul>
-            <li onClick={this.openNav}><Link to='/mydress'>category open</Link></li>
+            <li onClick={this.openNav}><Link to='/mydress'>My Dress Category</Link></li>
             <li style={activeBottomMenuStyle}><Link to='/mydress'><Icon name='photo' /></Link></li>
             <li style={activeBottomMenuStyle}><Link to='/mydress'><Icon name='image' /></Link></li>
           </ul>

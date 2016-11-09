@@ -14,7 +14,7 @@ class MemberIn extends React.Component {
       fontSize : '20px'
     }
 
-    const src = 'http://semantic-ui.com/images/wireframe/white-image.png'
+    const src ='./src/images/white-image.png'
 
     return (
       <div className='container'>

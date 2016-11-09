@@ -14,7 +14,7 @@ class LogIn extends React.Component {
       fontSize : '20px'
     }
 
-    const src = 'http://semantic-ui.com/images/wireframe/white-image.png'
+    const src ='./src/images/white-image.png'
 
     return (
       <div className='container'>
@@ -25,7 +25,7 @@ class LogIn extends React.Component {
                 <Link to='/mydress'><Image src={src} size='small' centered bordered /></Link><br />
                 <Button circular color='facebook' icon='facebook' />
                 <Button circular color='google plus' icon='google plus' /><br /><br />
-                <Link to='/forgot' style={activeMemberInStyle}>Forgot your password?</Link>
+                <Link to='/forgotpassword' style={activeMemberInStyle}>Forgot your password?</Link>
               </div>
             </div>
           </div>
