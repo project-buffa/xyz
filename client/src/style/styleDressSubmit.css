@@ -1,0 +1,76 @@
+.submittop {
+}
+
+.submittop ul{
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    background-color: #4584D1;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+}
+
+.submittop li {
+    float: right;
+}
+
+.submittop li a {
+    display: block;
+    color: #ffffff;
+    padding: 14px;
+    text-decoration: none;
+}
+
+.submittoptitle {
+    text-align: center;
+    background-color: #4FBFED;
+    position: fixed;
+    top: 47px;
+    width: 100%;
+    padding: 10px;
+    color: #ffffff;
+}
+
+.submitcontainer {
+    font-family: 'Gloria Hallelujah', cursive;
+    padding: 20px;
+    margin-top: 86px;
+    /*height:100%;*/
+}
+
+.submitcategory {
+    font-family: 'Gloria Hallelujah', cursive;
+    /*margin-top: 86px;*/
+    padding: 12px;
+    color: #4584D1;
+}
+
+.submitname {
+    font-family: 'Gloria Hallelujah', cursive;
+    /*margin-top: 86px;*/
+    padding: 12px;
+    color: #4584D1;
+}
+
+.selectimage {
+    font-family: 'Gloria Hallelujah', cursive;
+    /*margin-top: 86px;*/
+    padding: 12px;
+    color: #4584D1;
+}
+
+.submitbottom {
+    position: fixed;
+    background-color: #4EC8AF;
+    bottom: 0px;
+    width: 100%;
+    color: white;
+    padding: 12px;
+    text-align: center;
+    position: fixed;
+}
+
+.submitbottom a {
+    color: white;
+}

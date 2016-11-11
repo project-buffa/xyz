@@ -1,6 +1,7 @@
 import React from 'react'
+import { Link } from 'react-router'
 import { connect } from 'react-redux'
-import { Input, Image } from 'semantic-ui-react'
+import { Icon } from 'semantic-ui-react'
 
 class MyDressList extends React.Component {
 
@@ -11,37 +12,24 @@ class MyDressList extends React.Component {
   //   }
   // }
 
-  // fileUpload(){
-  //   document.getElementById('uploadfile').click()
-  // }
-
   render () {
-
-    const uploadFileHidden = {
-      // display: 'none'
-    }
-
-    // const src = '../../../upload/sampledress.jpg'
 
     const src ='./upload/sampledress.jpg'
 
     const imgStyle = {
       width: '120px',
       height: 'auto',
-      margin: '5px'
+      margin: '5px',
+      float: 'left'
     }
 
     return (
       <div className='mydresslist'>
+        <br /><br /><br /><br /><br /><br /><br /><br /><br />
+        you don't have any dresses!<br />
+        Add a dress item on <Link to='/dresssubmit'><Icon name='photo' size='small'/></Link> or <Link to='/dresssubmit'><Icon name='image' size='small'/></Link>
         {/*{this.props.dress}*/}
-        {/*<form action='/upload' method='post' encType='multipart/form-data'>
-          <Input transparent type='file' name='uploadDress' accept='image/*' capture='camera' placeholder='' />
-          <Input transparent type='submit' />
-        </form>*/}
-        {/*<div className="wrapper" style={uploadFileHidden}>
-            <Input type="file" id="uploadfile" accept='image/*' capture='camera' /> 
-        </div>
-        <div onClick={this.fileUpload}>click</div>*/}
+        {/*<img src={src} style={imgStyle}/>
         <img src={src} style={imgStyle}/>
         <img src={src} style={imgStyle}/>
         <img src={src} style={imgStyle}/>
@@ -53,8 +41,7 @@ class MyDressList extends React.Component {
         <img src={src} style={imgStyle}/>
         <img src={src} style={imgStyle}/>
         <img src={src} style={imgStyle}/>
-        <img src={src} style={imgStyle}/>
-        <br /><br /><br /><br />
+        <br /><br /><br /><br />*/}
       </div> 
     )
   }

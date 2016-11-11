@@ -9,6 +9,7 @@ import LogIn from './components/LogIn'
 import ForgotPassword from './components/ForgotPassword'
 import Setting from './components/Setting'
 import MyDress from './containers/MyDress'
+import DressSubmit from './components/DressSubmit'
 import UploadError from './components/UploadError'
 import PageError from './components/PageError'
 
@@ -16,6 +17,7 @@ import { Provider } from 'react-redux'
 
 import { createStore } from 'redux'
 import reducers from './reducers'
+
 const store = createStore(reducers)
 
 console.log(store.getState())
@@ -32,6 +34,7 @@ class App extends React.Component {
           <Route path='/forgotpassword' component={ForgotPassword} />
           <Route path='/setting' component={Setting} />
           <Route path='/mydress' component={MyDress} />
+          <Route path='/dresssubmit' component={DressSubmit} />
           <Route path='/uploaderror' component={UploadError} />
           <Route path='*' component={PageError} />
         </Route>

@@ -1,6 +1,6 @@
 import React from 'react'
 
-class MyDRessListEntry extends React.Component {
+class MyDressListEntry extends React.Component {
 
   render () {
 
@@ -19,4 +19,4 @@ class MyDRessListEntry extends React.Component {
   
 }
 
-export default MyDRessListEntry
+export default MyDressListEntry

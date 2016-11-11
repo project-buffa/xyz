@@ -1,15 +1,33 @@
 import multer from 'multer'; // 의류 촬영 업로드 기능을 위한 미들 웨어
+import fs from 'fs'; // 파일 저장을 위한 ..
+import mysql from 'mysql';
 
-// 의류 검색
+var connection = mysql.createConnection({
+	host : 'localhost',
+	user : 'root',
+	password : '',
+  database : 'xyz'
+});
+
+// connection.end();
+
+connection.connect(function(err){
+	if(err){
+		console.log('mysql connect error', err);
+	}
+  console.log('connected mysql success');
+});
+
+// 리덕스 액션 의류 검색
 export function search(request, response){
-    console.log("server response : ", request.body.searchValue);
-    response.json(request.body.searchValue);
+  console.log("server response : ", request.body.searchValue);
+  response.json(request.body.searchValue);
 };
 
-// 의류 촬영 업로드
+// multer 저장소 설정
 var storage = multer.diskStorage({ // 저장소 설정
   destination: function (request, file, callback) {
-    callback(null, './server/upload'); // 저장 폴더 설정
+    callback(null, './client/upload'); // 저장 폴더 설정
   },
   filename: function (request, file, callback) {
   // console.log(file);
@@ -17,6 +35,39 @@ var storage = multer.diskStorage({ // 저장소 설정
   }
 });
 
+// 캔버스 파일 등록 base64 디코딩 이미지 저장
+export function dressImage(request, response){
+	// console.log('server response :', request.body.dressImageData);
+	response.json(request.body.dressImageData);
+
+  var canvasdata = request.body.dressImageData.replace(/^data:image\/\w+;base64,/, "");
+  var buf = new Buffer(canvasdata, 'base64');
+
+  var datanamerandom = Math.floor(Math.random() * 1000000) + 1;
+  var nowTime = new Date();
+  // var dataname = nowTime.getFullYear()+''+nowTime.getMonth()+''+nowTime.getDate()+''+nowTime.getTime()+''+datanamerandom;
+  var dataname = datanamerandom;
+
+  fs.writeFile('./client/upload/'+dataname+'.jpg', buf, function(err) {
+    if (err) throw err;
+    console.log('canvas image '+dataname+' save success');
+  });
+
+  var u_id = '20';
+  var c_id = '4';
+
+  connection.query('insert into xyzDress(u_id, c_id, dressname) values ('
+    + connection.escape(u_id) + ','
+    + connection.escape(c_id) + ','
+    + connection.escape(dataname) + ' );' , function(err, rows, fields){
+    if(err){
+      console.log('insert query error', err);
+    }
+  });
+
+}
+
+// 의류 촬영 업로드
 const upload = multer({storage: storage}).single('uploadDress'); // form input type file name 설정
 
 export function dressUpload(request, response) { // 파일 업로드 기능 구현

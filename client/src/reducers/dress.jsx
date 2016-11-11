@@ -14,8 +14,9 @@ const initialState = {
 const dress = (state = initialState, action) => {
     switch(action.type) {
         case SEARCH_DRESS:
+            // state.text = action.text
             return {
-                text: action.text   
+                text: action.text  
             }
         default:
             return state

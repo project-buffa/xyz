@@ -25,6 +25,7 @@
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "fabric": "^1.6.6",
+    "fs": "0.0.1-security",
     "jquery": "^3.1.1",
     "multer": "^1.2.0",
     "mysql": "^2.12.0",
