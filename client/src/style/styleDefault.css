@@ -176,6 +176,7 @@ html,body {
 .mydress {
     /*width: 100%;*/
     /*background-color: red;*/
+    /*border: 50px solid white;*/
 }
 
 .mydresslist {
@@ -183,8 +184,10 @@ html,body {
     color: #4584D1;
     text-align: center;
     margin-top: 125px;
-    /*margin-bottom: -50px;*/
+    margin-bottom: 100px;
     font-family: 'Gloria Hallelujah', cursive;
+    /*border-style: solid white;
+    border-bottom-width: 30px;*/
 }
 
 .mydresslistentry {

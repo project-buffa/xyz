@@ -66,8 +66,8 @@ class DressSubmit extends React.Component {
 			img.onload = function() {
 				console.log('hahaha2')
 		    	const options = {
-		    		canvas: true,
-		    		maxWidth: 300
+		    		canvas: true
+		    	//	maxWidth: 300
 		    	}
 		    	console.log('hahaha3')
 		    	const currentfile = file
@@ -109,24 +109,38 @@ class DressSubmit extends React.Component {
 		//console.log(img_src)
 	
 		img.onload = function() {
+			let ratio = (window.innerWidth - 64) / img.width
+			let canvasWidth = window.innerWidth - 64
+			let canvasHeight = img.height * ratio
+			
 			const OwnCanv = new fabric.Canvas('c', {
-				isDrawingMode: true
+				isDrawingMode: true,
+				width: canvasWidth,
+				height: canvasHeight
 			});
+
+			// Resize Event
+			// window.addEventListener('resize', OwnCanv, false);
+			// function resizeCanvas() {
+			// 	// OwnCanv.setHeight('auto');
+			// 	OwnCanv.setWidth(window.innerWidth - 64);
+			// 	OwnCanv.renderAll();
+			// }
+			// resizeCanvas();
 		
 			// OwnCanv.width = img.width;
 		  //   OwnCanv.height = img.height;
 
 			const imgInstance = new fabric.Image(img, {
-
 				async: false,
 				left: 0,
 				top: 0,
 				lockMovementX: true,
 				lockMovementY: true,
-        // width: 300,
-        // height: 400
-
+				width: canvasWidth,
+				height: canvasHeight
 			});
+
 			imgInstance.crossOrigin = 'anonymous'
 			//console.log(imgInstance)
 			OwnCanv.add(imgInstance);
@@ -152,10 +166,10 @@ class DressSubmit extends React.Component {
 				
 				function drawImage(alpha) {
 					ctx.clearRect(0,0,cw,ch);
-				    ctx.globalAlpha=alpha;
-				    ctx.drawImage(img,0,0);
-				    ctx.globalAlpha=1.00;
-				  }
+					ctx.globalAlpha=alpha;
+					ctx.drawImage(img,0,0);
+					ctx.globalAlpha=1.00;
+				}
 
 				let cw
 				let ch

@@ -15,7 +15,7 @@ import path from 'path';
 //   console.log("temp : ", temp);
 // });
 
-import { search, dressUpload, dressImage } from './axios';
+import { search, dressUpload, dressImage, dressList, dressCategory } from './axios';
 
 const bodyParser  = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -25,22 +25,9 @@ app.use('/', express.static(__dirname + './../client'));
 
 app.post('/dressimage', dressImage); // 캔버스 파일 등록
 
-// var multer = require("multer");
-// var fs = require("fs");
+app.post('/dresslist', dressList); // 의류 가지고 오기
 
-// app.post('/dressimage', multer({dest: "./client/upload"}).array("uploads", 12), function(req, res) {
-//     var fileInfo = [];
-//     canvasData = request.body.dressImageData.length;
-//     for(var i = 0; i < canvasData.length; i++) {
-//         fileInfo.push({
-//             "originalName": canvasData[i].originalName,
-//             "size": req.files[i].size,
-//             "b64": new Buffer(fs.readFileSync(req.files[i].path)).toString("base64")
-//         });
-//         fs.unlink(req.files[i].path);
-//     }
-//     res.send(fileInfo);
-// });
+app.post('/dresscategory', dressCategory); // 의류 카테고리 가지고 오기
 
 app.post('/search', search); // 의류 검색
 

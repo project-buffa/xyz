@@ -20,7 +20,7 @@ import reducers from './reducers'
 
 const store = createStore(reducers)
 
-console.log(store.getState())
+// console.log(store.getState())
 
 class App extends React.Component {
 

@@ -9,8 +9,6 @@ var connection = mysql.createConnection({
   database : 'xyz'
 });
 
-// connection.end();
-
 connection.connect(function(err){
 	if(err){
 		console.log('mysql connect error', err);
@@ -54,7 +52,7 @@ export function dressImage(request, response){
   });
 
   var u_id = '20';
-  var c_id = '4';
+  var c_id = '2';
 
   connection.query('insert into xyzDress(u_id, c_id, dressname) values ('
     + connection.escape(u_id) + ','
@@ -65,7 +63,37 @@ export function dressImage(request, response){
     }
   });
 
-}
+};
+
+// 등록된 의류 가져오기
+export function dressList(request, response) {
+  connection.query('select * from xyzDress', function(err, rows, fields){
+    if(err){
+      console.log('select xyzDress query error', err);
+    }
+    response.send(rows);
+    // console.log(rows);
+    // console.log(fields);
+    // for (var i=0; i<rows.length;i++){
+    //   console.log(rows[i].dressname);
+    // };
+  });
+};
+
+// 등록된 카테고리 가져오기
+export function dressCategory(request, response) {
+  connection.query('select * from xyzCategory', function(err, rows, fields){
+    if(err){
+      console.log('select xyzCategory query error', err);
+    }
+    response.send(rows);
+    // console.log(rows);
+    // console.log(fields);
+    // for (var i=0; i<rows.length;i++){
+    //   console.log(rows[i].dressname);
+    // };
+  });
+};
 
 // 의류 촬영 업로드
 const upload = multer({storage: storage}).single('uploadDress'); // form input type file name 설정
@@ -90,3 +118,5 @@ export function dressUpload(request, response) { // 파일 업로드 기능 구�
     return response.redirect('/mydress'); // 업로드 후 리다이렉트 설정
   })
 };
+
+// connection.end();

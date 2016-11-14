@@ -2,11 +2,6 @@ import React, {propTypes} from 'react'
 import { Link } from 'react-router'
 import { Input } from 'semantic-ui-react'
 
-import axios from 'axios'
-
-import { connect } from 'react-redux'
-import { searchDress } from '../actions'
-
 // const propTypes = {
 // }
 
@@ -14,24 +9,6 @@ import { searchDress } from '../actions'
 // }
 
 class TopSearch extends React.Component {
-
-  constructor(props){
-    super(props)
-    this.handleSearchDressChange = this.handleSearchDressChange.bind(this)
-  }
-
-  handleSearchDressChange(e){
-    console.log("이벤트 발생 : ", e.target.value)
-    axios.post('/search', {
-      searchValue : e.target.value
-    })
-    .then((response) => {
-      console.log("axios success : ", response.data)
-      console.log("axios status : ", response.status)
-      this.props.handleSearchDress(response.data)
-    })
-    // this.props.handleSearchDress(e.target.value)
-  }
 
   render () {
 
@@ -43,8 +20,8 @@ class TopSearch extends React.Component {
     return (
       <div className='topsearch'>
         <ul>
-            <li><Link to='/mydress'>{this.props.dress}</Link></li>
-            <li style={activeTopSearchStyle}><Link><Input transparent icon='search' placeholder='Search...' value={this.props.dress} onChange={this.handleSearchDressChange} /></Link></li>
+            <li><Link to='/mydress'></Link></li>
+            <li style={activeTopSearchStyle}><Link><Input transparent icon='search' placeholder='Search...'  /></Link></li>
         </ul>
       </div>
     )
@@ -55,22 +32,7 @@ class TopSearch extends React.Component {
 // TopMenu.propTypes = propTypes
 // TopMenu.defaultProps = defaultProps
 
-const mapStateToProps = (state) => {
-  return {
-    dress: state.dress.text
-  }
-}
-
-const mapDispatchToProps = (dispatch) => {
-    return {
-        handleSearchDress: (value) => { dispatch(searchDress(value)) }
-    };
-};
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(TopSearch)
+export default TopSearch
 
 // ----------------------------------------------------------------------------------------------------------------------------
 

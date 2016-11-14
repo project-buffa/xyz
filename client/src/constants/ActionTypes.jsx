@@ -1,1 +1,2 @@
-export const SEARCH_DRESS = 'SEARCH_DRESS'
+export const LOAD_CATEGORY = 'LOAD_CATEGORY'
+export const LOAD_DRESS = 'LOAD_DRESS'

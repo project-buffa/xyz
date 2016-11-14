@@ -1,7 +1,5 @@
-import { SEARCH_DRESS } from '../constants/ActionTypes'
+import { LOAD_CATEGORY, LOAD_DRESS } from '../constants/ActionTypes'
 
-export const searchDress = text => ({ type: SEARCH_DRESS, text })
+export const loadCategory = list => ({type: LOAD_CATEGORY, list});
 
-// import * as types from '../constants/ActionTypes'
-
-// export const searchDress = text => ({ type: types.SEARCH_DRESS, text })
+export const loadDress = list => ({type: LOAD_DRESS, list});

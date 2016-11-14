@@ -3,7 +3,19 @@ import { Link } from 'react-router'
 import { connect } from 'react-redux'
 import { Icon } from 'semantic-ui-react'
 
+import axios from 'axios'
+
+import { loadCategory } from '../actions';
+
 class BottomMenu extends React.Component {
+
+  constructor(props){
+    super(props)
+  }
+
+  componentWillMount(){
+    this.props.handleLoadCategory();
+  }
 
   openNav() {
     document.getElementById("myNav").style.width = "100%";
@@ -39,9 +51,9 @@ class BottomMenu extends React.Component {
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                   X
                 </li>
-                {this.props.dresscategory.map((category, i) => {
+                {this.props.loadcategory.map((category, i) => {
                   return (
-                    <li key={i}>{category.name}</li>
+                    <li key={i}>{category.categoryname}</li>
                   )
                 })}
               </ul>
@@ -54,13 +66,25 @@ class BottomMenu extends React.Component {
   }
   
 }
-
 const mapStateToProps = (state) => {
   return {
-    dresscategory: state.dress.dresscategory
+    loadcategory: state.category.loadcategory
   }
 }
 
+const mapDispatchToProps = (dispatch) => {
+    return {
+        handleLoadCategory: () => {
+          axios.post('/dresscategory')
+          .then((response) => {
+            // console.log('dresscategory : ',response.data);
+            dispatch(loadCategory(response.data));
+          })
+        }
+    };
+};
+
 export default connect(
-  mapStateToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(BottomMenu)

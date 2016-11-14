@@ -3,31 +3,43 @@ import { Link } from 'react-router'
 import { connect } from 'react-redux'
 import { Icon } from 'semantic-ui-react'
 
+import axios from 'axios'
+
+import { loadDress } from '../actions';
+
 class MyDressList extends React.Component {
 
-  // constructor(props){
-  //   super(props)
+  constructor(props){
+    super(props)
+  }
 
-  //   this.state = {
-  //   }
-  // }
+  componentWillMount(){
+    this.props.handleLoadDress();
+  }
 
   render () {
 
-    const src ='./upload/sampledress.jpg'
+    // const src ='./upload/sampledress.jpg'
 
     const imgStyle = {
-      width: '120px',
+      width: '180px',
       height: 'auto',
-      margin: '5px',
-      float: 'left'
+      margin: '5px 0px 50px 0px',
+      textAlign: 'center',
+      float: 'left',
     }
 
     return (
       <div className='mydresslist'>
-        <br /><br /><br /><br /><br /><br /><br /><br /><br />
+        {/*<br /><br /><br /><br /><br /><br /><br /><br />
         you don't have any dresses!<br />
         Add a dress item on <Link to='/dresssubmit'><Icon name='photo' size='small'/></Link> or <Link to='/dresssubmit'><Icon name='image' size='small'/></Link>
+        <br />*/}
+        {this.props.loaddress.map((list, i) => {
+          return (
+            <img key={i} src={'./upload/'+list.dressname+'.jpg'} style={imgStyle} />
+          )
+        })}
         {/*{this.props.dress}*/}
         {/*<img src={src} style={imgStyle}/>
         <img src={src} style={imgStyle}/>
@@ -42,7 +54,7 @@ class MyDressList extends React.Component {
         <img src={src} style={imgStyle}/>
         <img src={src} style={imgStyle}/>
         <br /><br /><br /><br />*/}
-      </div> 
+      </div>
     )
   }
   
@@ -50,12 +62,25 @@ class MyDressList extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    dress: state.dress.text
+    loaddress: state.dress.loaddress
   }
 }
 
+const mapDispatchToProps = (dispatch) => {
+    return {
+        handleLoadDress: () => {
+          axios.post('/dresslist')
+          .then((response) => {
+            // console.log('dresslist : ',response.data);
+            dispatch(loadDress(response.data));
+          })
+        }
+    };
+};
+
 export default connect(
-  mapStateToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(MyDressList)
 
 // ----------------------------------------------------------------------------------------------------------------------------

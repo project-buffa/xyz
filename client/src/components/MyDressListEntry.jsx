@@ -15,6 +15,7 @@ class MyDressListEntry extends React.Component {
         </div>
       </div>
     )
+    
   }
   
 }
