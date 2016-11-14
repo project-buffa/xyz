@@ -314,7 +314,7 @@ class DressSubmit extends React.Component {
 
         <div className='submittop'>
           <ul>
-              <li style={activeTopStyle}><Link to='/mydress'>xyz</Link></li>
+              <li style={activeTopStyle}><Link to='/'>xyz</Link></li>
               <li><Link to='/mydress'>back</Link></li>
           </ul>
         </div>

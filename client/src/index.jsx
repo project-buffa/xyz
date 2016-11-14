@@ -10,6 +10,9 @@ import ForgotPassword from './components/ForgotPassword'
 import Setting from './components/Setting'
 import MyDress from './containers/MyDress'
 import DressSubmit from './components/DressSubmit'
+import MyCoordiSet from './components/MyCoordiSet'
+import RecommendCoordi from './components/RecommendCoordi'
+import DressAlbum from './components/DressAlbum'
 import UploadError from './components/UploadError'
 import PageError from './components/PageError'
 
@@ -35,6 +38,9 @@ class App extends React.Component {
           <Route path='/setting' component={Setting} />
           <Route path='/mydress' component={MyDress} />
           <Route path='/dresssubmit' component={DressSubmit} />
+          <Route path='/mycoordiset' component={MyCoordiSet} />
+          <Route path='/recommendcoordi' component={RecommendCoordi} />
+          <Route path='/dressalbum' component={DressAlbum} />
           <Route path='/uploaderror' component={UploadError} />
           <Route path='*' component={PageError} />
         </Route>

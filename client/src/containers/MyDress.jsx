@@ -5,64 +5,22 @@ import TopMenu from '../components/TopMenu'
 import TopSearch from '../components/TopSearch'
 import MyDressList from '../components/MyDressList'
 import MyDressListEntry from '../components/MyDressListEntry'
-import MyCoordiSet from '../components/MyCoordiSet'
-import RecommendCoordi from '../components/RecommendCoordi'
 import BottomMenu from '../components/BottomMenu'
-import Spinner from '../components/Spinner'
 
 class MyDress extends React.Component {
 
-  constructor(props){
-    super(props)
-
-    this.state = {
-      spinner : false
-    }
-  }
-
-  componentDidMount(){
-
-    // console.log('{this.state.spinner}')
-
-    setTimeout( () => {
-      this.setState({spinner:true})
-    }, 1500)
-  }
-  
   render () {
 
-    const spinnerStyle = {
-      backgroundColor : '#4584D1'
-    }
-
-    console.log(this.state.spinner)
-
-    var mydressSpace
-
-    if(this.state.spinner){
-      mydressSpace = (
-        <div className='mydress'>
-          <MyDressList />
-          <Top />
-          <TopMenu />
-          <TopSearch />
-          <BottomMenu />
-        </div>
-      )
-    } else {
-      mydressSpace = (
-        <div>
-          <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-          <Spinner style={spinnerStyle}/>
-        </div>
-      )
-    }
-
     return (
-      <div>
-      {mydressSpace}
+      <div className='mydress'>
+        <MyDressList />
+        <Top />
+        <TopMenu />
+        <TopSearch />
+        <BottomMenu />
       </div>
     )
+
   }
 
 }

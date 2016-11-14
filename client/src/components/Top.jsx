@@ -13,7 +13,7 @@ class Top extends React.Component {
     return (
       <div className='top'>
           <ul>
-              <li><Link to='/mydress'>xyz</Link></li>
+              <li><Link to='/'>xyz</Link></li>
               <li style={activeTopStyle}><Link to='/setting'><Icon name='setting' size='small'/></Link></li>
           </ul>
       </div>

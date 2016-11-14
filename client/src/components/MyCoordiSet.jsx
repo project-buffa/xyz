@@ -6,12 +6,8 @@ class MyCoordiSet extends React.Component {
 
     return (
       <div className='container'>
-        <div className='mycoordiset'>
-          <div className='outer'>
-            <div className='inner'>
-              MyCoordiSet
-            </div>
-          </div>
+        <div className='mycoordiset' style={{textAlign : 'center'}}>
+          <h1>My Coordi Set<br />준비중입니다.</h1>
         </div>
       </div>
     )

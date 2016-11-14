@@ -6,12 +6,8 @@ class RecommendCoordi extends React.Component {
 
     return (
       <div className='container'>
-        <div className='recommendcoordi'>
-          <div className='outer'>
-            <div className='inner'>
-              RecommendCoordi
-            </div>
-          </div>
+        <div className='recommendcoordi' style={{textAlign : 'center'}}>
+          <h1>Recommend Coordi<br />준비중입니다.</h1>
         </div>
       </div>
     )

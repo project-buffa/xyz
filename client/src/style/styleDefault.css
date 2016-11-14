@@ -202,7 +202,10 @@ html,body {
 
 .recommendcoordi {
     margin-top: 125px;
-    font-family: 'Gloria Hallelujah', cursive;
+}
+
+.dressalbum {
+    margin-top: 125px;
 }
 
 .bottommenu {
@@ -237,9 +240,11 @@ html,body {
 }
 
 .uploaderror {
+    margin-top: 125px;
 }
 
 .pageerror {
+    margin-top: 125px;
 }
 
 /*.header {
