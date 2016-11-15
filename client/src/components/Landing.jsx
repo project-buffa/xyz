@@ -36,7 +36,7 @@ class Landing extends React.Component {
           <div className='landing'>
             <div className='outer'>
               <div className='inner'>
-                <Link to='/memberin' style={landingStyle}>xyz</Link>
+                <Link to='/memberin' style={landingStyle}>MANAFIT</Link>
               </div>
             </div>
           </div>

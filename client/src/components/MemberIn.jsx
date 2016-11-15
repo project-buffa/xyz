@@ -294,7 +294,7 @@ class MemberIn extends React.Component {
       // background : 'red'
     }
 
-    const src ='./src/images/white-image.png'
+    const src ='./src/images/white-image.jpg'
 
     return (
       <div className='container'>
@@ -302,7 +302,7 @@ class MemberIn extends React.Component {
           <div className='outer'>
             
               <div className='inner' style={memberInStyle}>
-                xyz 2016 SIGN UP<br /><br />
+                MANAFIT 2016 SIGN UP<br /><br />
                 <Image src={src} size='small' centered bordered /><br />
                 <GoogleLogin
               clientId={"681391014277-plrkjn39cj0ilg7pfi88s4fnb12sjlap.apps.googleusercontent.com"}
@@ -310,6 +310,7 @@ class MemberIn extends React.Component {
               onFailure={this.responseGoogle}
               offline={false}
                />
+               <br />
             <FacebookLogin
               appId="1393584200670947" 
               autoLoad={false}
@@ -320,7 +321,7 @@ class MemberIn extends React.Component {
               icon="fa-facebook"
                />
                 <br /><br />
-                <Link to='/login' style={activeMemberInStyle}>Have a xyz.com account?</Link>
+                <Link to='/login' style={activeMemberInStyle}>Have a manafit.com account?</Link>
               </div>
             </div>
           </div>

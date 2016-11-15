@@ -176,8 +176,8 @@ class DressSubmit extends React.Component {
 				let cw
 				let ch
 
-				cw = canvas.width = img.width
-				ch = canvas.height = img.height
+				cw = canvas.width //= img.width
+				ch = canvas.height //= img.height
 
 				let minX = 10000
 				let minY = 10000
@@ -318,7 +318,7 @@ class DressSubmit extends React.Component {
 
         <div className='submittop'>
           <ul>
-              <li style={activeTopStyle}><Link to='/'>xyz</Link></li>
+              <li style={activeTopStyle}><Link to='/'>MANAFIT</Link></li>
               <li><Link to='/mydress'>back</Link></li>
           </ul>
         </div>

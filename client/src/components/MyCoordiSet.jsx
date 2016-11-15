@@ -3,27 +3,15 @@ import ReactDOM from 'react-dom'
 import Modal from 'react-modal'
 import OuterEntryList from './OuterEntryList'
 import exampleOuterData from './ExampleOuterData'
-import {fabric, Canvas, Image, renderAll} from 'fabric'
-
-// const canvas = new fabric.Canvas('canvas', {
-// 			hoverCursor: 'pointer',
-// 			selection: false
-// 		})
-// 		canvas.on({
-// 			'object:moving': function(e) {
-// 				e.target.opacity = 0.5
-// 			},
-// 			'object:modified': function(e) {
-// 				e.target.opacity = 1
-// 			}
-// 		})
+import {fabric, Canvas, Image, renderAll, toJSON, loadFromJSON} from 'fabric'
 
 const appElement = document.getElementById('your-app-element');
 
+//Modal dialog style
 const customStyles = {
   content : {
-    top                   : '300px',
-    left                  : '100px',
+    top                   : '300',
+    left                  : '100',
     right                 : 'auto',
     bottom                : 'auto',
     marginRight           : '-50%',
@@ -32,35 +20,25 @@ const customStyles = {
   }
 };
 
+let canvas
+let jsonData
+
 class MyCoordiSet extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			modalIsOpen: false,
 			outerDatas: window.exampleOuterData,
-			selectCloth: []
+			selectCloth: [],
+			saveCodiset: ''
 		}
 		this.openModal = this.openModal.bind(this)
 		this.afterOpenModal = this.afterOpenModal.bind(this)
 		this.closeModal = this.closeModal.bind(this)
 		this.setCodi = this.setCodi.bind(this)
+		this.saveCodi = this.saveCodi.bind(this)
+		this.loadCodi = this.loadCodi.bind(this)
 	}
-
-	// componentdidmount() {
-	// 	const canvas = new fabric.Canvas('c', {
-	// 		hoverCursor: 'pointer',
-	// 		selection: false
-	// 	})
-	// 	canvas.on({
-	// 		'object:moving': function(e) {
-	// 			e.target.opacity = 0.5
-	// 		},
-	// 		'object:modified': function(e) {
-	// 			e.target.opacity = 1
-	// 		}
-	// 	})
-
-	// }
 
 	openModal () {
 		this.setState({
@@ -82,7 +60,7 @@ class MyCoordiSet extends React.Component {
 			selectCloth: arr
 		})
 		console.log(this.state)
-		const canvas = this.__canvas = new fabric.Canvas('canvas', {
+		canvas = this.__canvas = new fabric.Canvas('canvas', {
 			hoverCursor: 'pointer',
 			selection: false
 		})
@@ -90,8 +68,8 @@ class MyCoordiSet extends React.Component {
 
 		arr.forEach((selectedCloth) => {
 			fabric.Image.fromURL(selectedCloth, function(image) {
-        image.width = 150
-        image.height = 200
+				image.height = 150
+				image.width = 100
 				image.setLeft(x)
 				image.setTop(y)
 				image.on('selected', function() {
@@ -102,9 +80,9 @@ class MyCoordiSet extends React.Component {
 				canvas.renderAll()
 			})
 		})
-
+		console.log(ctx)
+		console.log(canvas)
 	}
-
 
 	setCodi (outer) {
 		let arr = this.state.selectCloth;
@@ -112,6 +90,25 @@ class MyCoordiSet extends React.Component {
 		this.setState({
 			selectCloth: arr
 		})
+	}
+
+	saveCodi () {
+		//let canvas = document.getElementById('canvas')
+		let jsonData = JSON.stringify(canvas.toDatalessJSON())
+		console.log(jsonData)
+		this.setState({
+			saveCodiset: jsonData
+		})
+		canvas.clear()
+
+	}
+
+	loadCodi () {
+		console.log(jsonData)
+		canvas.loadFromJSON(this.state.saveCodiset, function () {
+    //render the canvas
+    canvas.renderAll()
+})
 	}
 
 	render() {
@@ -126,12 +123,18 @@ class MyCoordiSet extends React.Component {
             	contentLabel="Example Modal"
             	>
             		<h2 ref="subtitle">Outer</h2>
-            		{this.state.outerDatas.map((outer,i) => (
-                <OuterEntryList  key={i}setCodi={this.setCodi} outer={outer} />))}
+            		{this.state.outerDatas.map(outer =>
+                <OuterEntryList setCodi={this.setCodi} outer={outer} />)}
             		<button onClick={this.closeModal}>USE</button>
         		</Modal>
         		<div>
-        		<canvas id="canvas" width="800" height="600"></canvas>
+        		<canvas id="canvas" width="600" height="300"></canvas>
+        		</div>
+        		<div>
+        		<button onClick={this.saveCodi}>Save</button>
+        		</div>
+        		<div>
+        		<button onClick={this.loadCodi}>Load</button>
         		</div>
         	</div>
 			)
@@ -140,23 +143,3 @@ class MyCoordiSet extends React.Component {
 
 
 module.exports = MyCoordiSet
-
-// import React from 'react'
-
-// class MyCoordiSet extends React.Component {
-
-//   render () {
-
-//     return (
-//       <div className='container'>
-//         <div className='mycoordiset' style={{textAlign : 'center'}}>
-//           <h1>My Coordi Set<br />준비중입니다.</h1>
-//         </div>
-//       </div>
-//     )
-//   }
-  
-// }
-
-// export default MyCoordiSet
-

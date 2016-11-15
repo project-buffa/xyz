@@ -14,14 +14,14 @@ class LogIn extends React.Component {
       fontSize : '20px'
     }
 
-    const src ='./src/images/white-image.png'
+    const src ='./src/images/white-image.jpg'
 
     return (
       <div className='container'>
         <div className='login'>
           <div className='outer'>
               <div className='inner' style={memberInStyle}>
-                xyz 2016 SIGN IN<br /><br />
+                MANAFIT 2016 SIGN IN<br /><br />
                 <Link to='/mydress'><Image src={src} size='small' centered bordered /></Link><br />
                 <Button circular color='facebook' icon='facebook' />
                 <Button circular color='google plus' icon='google plus' /><br /><br />
