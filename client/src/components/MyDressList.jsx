@@ -40,20 +40,6 @@ class MyDressList extends React.Component {
             <img key={i} src={'./upload/'+list.dressname+'.jpg'} style={imgStyle} />
           )
         })}
-        {/*{this.props.dress}*/}
-        {/*<img src={src} style={imgStyle}/>
-        <img src={src} style={imgStyle}/>
-        <img src={src} style={imgStyle}/>
-        <img src={src} style={imgStyle}/>
-        <img src={src} style={imgStyle}/>
-        <img src={src} style={imgStyle}/>
-        <img src={src} style={imgStyle}/>
-        <img src={src} style={imgStyle}/>
-        <img src={src} style={imgStyle}/>
-        <img src={src} style={imgStyle}/>
-        <img src={src} style={imgStyle}/>
-        <img src={src} style={imgStyle}/>
-        <br /><br /><br /><br />*/}
       </div>
     )
   }
@@ -75,8 +61,8 @@ const mapDispatchToProps = (dispatch) => {
             dispatch(loadDress(response.data));
           })
         }
-    };
-};
+    }
+}
 
 export default connect(
   mapStateToProps,

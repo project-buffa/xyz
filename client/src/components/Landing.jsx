@@ -18,7 +18,7 @@ class Landing extends React.Component {
 
       setTimeout( () => {
       this.setState({spinner:true})
-      }, 1500)
+      }, 2000)
   }
 
   render () {
